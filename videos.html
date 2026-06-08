@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ronaldo Pulse | Videos</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell page-shell">
+      <nav class="topbar page-topbar" aria-label="Primary">
+        <a class="brand" href="index.html" aria-label="Ronaldo Pulse home">
+          <span class="brand__mark">RP</span>
+          <span>Ronaldo Pulse</span>
+        </a>
+        <div class="topbar__links">
+          <a href="index.html">Home</a>
+          <a href="legacy.html">Legacy</a>
+          <button class="music-toggle" type="button" data-music-toggle>Music</button>
+        </div>
+      </nav>
+
+      <section class="section page-hero">
+        <p class="kicker">Watch room</p>
+        <h1>Video Arena</h1>
+        <p class="hero__copy">
+          A media page with an embedded Ronaldo video playlist and quick links to official football video sources.
+        </p>
+      </section>
+
+      <section class="section video-stage">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">Local videos</p>
+            <h2>Your Clips</h2>
+          </div>
+          <p class="section__note">These play from the app assets folder, so they work without YouTube.</p>
+        </div>
+        <div class="local-video-grid">
+          <article class="local-video-card">
+            <h3>TY cristiano</h3>
+            <div class="video-frame local-video-frame">
+              <video controls preload="metadata" poster="assets/ronaldo-hero.png">
+                <source src="assets/ty-cristiano.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </article>
+          <article class="local-video-card">
+            <h3>Ronaldo top bins</h3>
+            <div class="video-frame local-video-frame">
+              <video controls preload="metadata" poster="assets/ronaldo-hero.png">
+                <source src="assets/ronaldo-top-bins.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </article>
+          <article class="local-video-card">
+            <h3>10 Things Cristiano Ronaldo Did In Football Messi Didnt</h3>
+            <div class="video-frame local-video-frame">
+              <video controls preload="metadata" poster="assets/ronaldo-hero.png">
+                <source src="assets/10-things-ronaldo-did.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section video-stage">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">Official feed</p>
+            <h2>YouTube Arena</h2>
+          </div>
+        </div>
+        <div class="video-frame">
+          <iframe
+            title="UR Cristiano official YouTube playlist"
+            src="https://www.youtube.com/embed/videoseries?list=UUtxD0x6AuNNqdXO9Wp5GHew"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-actions">
+          <a class="button button--primary" href="https://www.youtube.com/@cristiano" target="_blank" rel="noopener noreferrer">Open Official Channel</a>
+          <a class="button button--ghost" href="https://www.fifa.com/en/watch/2Iq5I5aW_0-y9fYxZJIQGg" target="_blank" rel="noopener noreferrer">FIFA Goal Clip</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">Video cards</p>
+            <h2>More To Watch</h2>
+          </div>
+        </div>
+        <div class="link-grid">
+          <a class="link-card" href="https://www.youtube.com/@cristiano" target="_blank" rel="noopener noreferrer">
+            <span>Official YouTube</span>
+            <strong>UR Cristiano uploads and channel videos</strong>
+          </a>
+          <a class="link-card" href="https://www.uefa.com/uefachampionsleague/history/video/0270-13dd49b007c5-a778c4a87ad2-1000--todos-os-golos-de-cristiano-ronaldo-na-champions-league/" target="_blank" rel="noopener noreferrer">
+            <span>UEFA video</span>
+            <strong>Champions League Ronaldo goal collection</strong>
+          </a>
+          <a class="link-card" href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/cristiano-ronaldo-goal-portugal-spain-2018" target="_blank" rel="noopener noreferrer">
+            <span>FIFA feature</span>
+            <strong>World Cup wonder goal story</strong>
+          </a>
+          <a class="link-card" href="index.html#quiz">
+            <span>Back in app</span>
+            <strong>Return to the quiz and fan card builder</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

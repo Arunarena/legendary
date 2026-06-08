@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ronaldo Pulse</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-label="Ronaldo Pulse dashboard">
+        <img class="hero__image" src="assets/ronaldo-hero.png" alt="Cinematic footballer celebrating in a stadium">
+        <div class="hero__shade"></div>
+        <nav class="topbar" aria-label="Primary">
+          <a class="brand" href="#top" aria-label="Ronaldo Pulse home">
+            <span class="brand__mark">RP</span>
+            <span>Ronaldo Pulse</span>
+          </a>
+          <div class="topbar__links">
+            <a href="#eras">Eras</a>
+            <a href="#lab">Lab</a>
+            <a href="#quiz">Quiz</a>
+            <a href="#card">Card</a>
+            <a href="#links">Links</a>
+            <a href="videos.html">Videos</a>
+            <a href="legacy.html">Legacy</a>
+            <button class="music-toggle" type="button" data-music-toggle>Music</button>
+          </div>
+        </nav>
+
+        <div class="hero__content" id="top">
+          <p class="kicker">Siuuuu energy, polished properly</p>
+          <h1>Cristiano<br>Ronaldo</h1>
+          <p class="hero__copy">
+            A fast, cinematic fan app for the goals, trophies, eras, and clutch moments that made Ronaldo a football icon.
+          </p>
+          <div class="hero__actions" aria-label="Hero actions">
+            <a class="button button--primary" href="#eras">
+              <span aria-hidden="true">PLAY</span>
+              Explore Eras
+            </a>
+            <a class="button button--ghost" href="#card">
+              <span aria-hidden="true">STAR</span>
+              Build Card
+            </a>
+          </div>
+        </div>
+
+        <div class="score-strip" aria-label="Career highlights">
+          <article>
+            <strong>900+</strong>
+            <span>Senior goals</span>
+          </article>
+          <article>
+            <strong>5</strong>
+            <span>Ballon d'Or wins</span>
+          </article>
+          <article>
+            <strong>5</strong>
+            <span>Champions League titles</span>
+          </article>
+          <article>
+            <strong>Portugal</strong>
+            <span>Captain and legend</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--tight" id="eras">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">Career modes</p>
+            <h2>Pick An Era</h2>
+          </div>
+          <p class="section__note">Click a club or country to swap the story instantly.</p>
+        </div>
+        <div class="era-layout">
+          <div class="era-tabs" role="tablist" aria-label="Ronaldo eras">
+            <button class="era-tab is-active" type="button" role="tab" aria-selected="true" data-era="sporting">Sporting</button>
+            <button class="era-tab" type="button" role="tab" aria-selected="false" data-era="united">United</button>
+            <button class="era-tab" type="button" role="tab" aria-selected="false" data-era="madrid">Madrid</button>
+            <button class="era-tab" type="button" role="tab" aria-selected="false" data-era="juve">Juventus</button>
+            <button class="era-tab" type="button" role="tab" aria-selected="false" data-era="portugal">Portugal</button>
+          </div>
+          <article class="era-panel" aria-live="polite">
+            <div>
+              <p class="era-panel__eyebrow" id="eraYears">2002-2003</p>
+              <h3 id="eraTitle">The spark in Lisbon</h3>
+            </div>
+            <p id="eraBody">
+              A fearless teenage winger starts bending matches with speed, stepovers, and a refusal to play small.
+            </p>
+            <div class="era-stats">
+              <span id="eraTrait">Fearless</span>
+              <span id="eraMoment">Breakout night against United</span>
+              <span id="eraVibe">Raw electricity</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section command-deck" id="lab">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">Interactive lab</p>
+            <h2>Run The Match</h2>
+          </div>
+          <p class="section__note">Tap events, build momentum, and unlock fan badges.</p>
+        </div>
+        <div class="lab-grid">
+          <article class="goal-lab">
+            <div class="goal-lab__top">
+              <div>
+                <p class="kicker">Goal rush</p>
+                <h3 id="matchMood">Kickoff calm</h3>
+              </div>
+              <strong id="fanScore">0</strong>
+            </div>
+            <div class="meter" aria-label="Fan energy meter">
+              <span id="fanMeter"></span>
+            </div>
+            <div class="event-buttons">
+              <button class="mini-button" type="button" data-points="8" data-event="Step-over won">Step-over</button>
+              <button class="mini-button" type="button" data-points="14" data-event="Header buried">Header</button>
+              <button class="mini-button" type="button" data-points="20" data-event="Clutch goal">Goal</button>
+              <button class="mini-button mini-button--quiet" id="resetMatch" type="button">Reset</button>
+            </div>
+            <p class="event-feed" id="eventFeed" aria-live="polite">Waiting for the first big moment.</p>
+          </article>
+
+          <article class="badge-board">
+            <p class="kicker">Unlocks</p>
+            <div class="badge-list">
+              <button class="badge is-locked" type="button" data-badge="speed">Speed Mode</button>
+              <button class="badge is-locked" type="button" data-badge="air">Air Power</button>
+              <button class="badge is-locked" type="button" data-badge="clutch">Clutch Time</button>
+            </div>
+            <p class="badge-message" id="badgeMessage">Build enough fan energy to light up the badges.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section moments">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">Signature traits</p>
+            <h2>What Makes It Ronaldo</h2>
+          </div>
+        </div>
+        <div class="moment-grid">
+          <article class="moment-card">
+            <span class="moment-card__icon" aria-hidden="true">01</span>
+            <h3>Explosive Runs</h3>
+            <p>Early Ronaldo could turn a quiet touchline into panic with one change of pace.</p>
+          </article>
+          <article class="moment-card">
+            <span class="moment-card__icon" aria-hidden="true">02</span>
+            <h3>Box Instinct</h3>
+            <p>Later Ronaldo became a penalty-area machine, always reading the next rebound, cross, or mistake.</p>
+          </article>
+          <article class="moment-card">
+            <span class="moment-card__icon" aria-hidden="true">03</span>
+            <h3>Big-Game Nerve</h3>
+            <p>Knockout nights, late headers, penalties under pressure: the spotlight never looked too heavy.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split" id="quiz">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">Quick challenge</p>
+            <h2>Ronaldo IQ</h2>
+          </div>
+        </div>
+        <div class="quiz">
+          <p class="quiz__question" id="quizQuestion">Which club did Ronaldo join after leaving Sporting CP?</p>
+          <div class="quiz__answers" id="quizAnswers"></div>
+          <p class="quiz__result" id="quizResult" aria-live="polite"></p>
+          <button class="button button--primary quiz__next" id="nextQuestion" type="button">
+            <span aria-hidden="true">NEXT</span>
+            Next Question
+          </button>
+        </div>
+      </section>
+
+      <section class="section card-builder" id="card">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">Fan mode</p>
+            <h2>Build A Match-Night Card</h2>
+          </div>
+          <p class="section__note">Type, choose, slide, and randomize your own card.</p>
+        </div>
+        <div class="builder">
+          <form class="builder__controls">
+            <label>
+              Nickname
+              <input id="fanName" type="text" maxlength="18" value="CR7 Mode">
+            </label>
+            <label>
+              Power
+              <select id="fanPower">
+                <option>Clutch Finisher</option>
+                <option>Aerial Threat</option>
+                <option>Free-Kick Focus</option>
+                <option>Wing Sprint</option>
+              </select>
+            </label>
+            <label>
+              Card color
+              <select id="cardTheme">
+                <option value="classic">Classic Gold</option>
+                <option value="red">Red Heat</option>
+                <option value="green">Portugal Green</option>
+                <option value="steel">Stadium Steel</option>
+              </select>
+            </label>
+            <label>
+              Intensity
+              <input id="fanRating" type="range" min="80" max="99" value="94">
+            </label>
+            <button class="button button--ghost" id="randomCard" type="button">
+              <span aria-hidden="true">?</span>
+              Randomize Card
+            </button>
+          </form>
+          <article class="fan-card theme-classic" id="fanCard" aria-label="Generated Ronaldo fan card">
+            <span class="fan-card__rating" id="cardRating">94</span>
+            <p class="fan-card__label">Ronaldo Pulse</p>
+            <h3 id="cardName">CR7 Mode</h3>
+            <p id="cardPower">Clutch Finisher</p>
+            <div class="fan-card__bars">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section link-hub" id="links">
+        <div class="section__heading">
+          <div>
+            <p class="kicker">Hyperlinks</p>
+            <h2>Keep Exploring</h2>
+          </div>
+        </div>
+        <div class="link-grid">
+          <a class="link-card" href="https://www.cristianoronaldo.com/" target="_blank" rel="noopener noreferrer">
+            <span>Official site</span>
+            <strong>Career, projects, and official updates</strong>
+          </a>
+          <a class="link-card" href="https://www.uefa.com/uefachampionsleague/news/0253-0d820b46805f-b78ccae2c451-1000--what-uefa-r/" target="_blank" rel="noopener noreferrer">
+            <span>UEFA records</span>
+            <strong>Champions League records and milestones</strong>
+          </a>
+          <a class="link-card" href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/26-superstars-cristiano-ronaldo" target="_blank" rel="noopener noreferrer">
+            <span>FIFA feature</span>
+            <strong>Stats, quotes, highlights, trivia, and quiz</strong>
+          </a>
+          <a class="link-card" href="https://www.instagram.com/cristiano/" target="_blank" rel="noopener noreferrer">
+            <span>Instagram</span>
+            <strong>Follow the official @cristiano profile</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
