@@ -194,7 +194,8 @@ h1 {
   transform: translateY(-1px);
 }
 
-.music-toggle {
+.music-toggle,
+.install-toggle {
   min-height: 36px;
   border: 1px solid rgba(216, 173, 69, 0.46);
   border-radius: 6px;
@@ -208,6 +209,20 @@ h1 {
 .music-toggle.is-playing {
   background: var(--gold);
   color: #15100a;
+}
+
+.install-toggle {
+  background: rgba(24, 127, 90, 0.14);
+  border-color: rgba(24, 127, 90, 0.62);
+}
+
+.install-toggle:hover,
+.music-toggle:hover {
+  transform: translateY(-1px);
+}
+
+[hidden] {
+  display: none !important;
 }
 
 .score-strip {

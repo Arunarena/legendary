@@ -116,10 +116,12 @@ const eventButtons = document.querySelectorAll("[data-points]");
 const badges = document.querySelectorAll(".badge");
 const badgeMessage = document.querySelector("#badgeMessage");
 const musicButtons = document.querySelectorAll("[data-music-toggle]");
+const installButtons = document.querySelectorAll("[data-install-app]");
 
 const randomNames = ["CR7 Mode", "Siuuu Storm", "Clutch King", "Aerial Boss", "Goal Rush"];
 const randomPowers = ["Clutch Finisher", "Aerial Threat", "Free-Kick Focus", "Wing Sprint"];
 const themes = ["classic", "red", "green", "steel"];
+let deferredInstallPrompt;
 
 function setEra(key) {
   const era = eras[key];
@@ -399,6 +401,37 @@ function restoreMusicState() {
 
 window.addEventListener("beforeunload", saveMusicState);
 
+function registerServiceWorker() {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js").catch(() => {
+      // Service workers need http/https. Opening the file directly still works without offline caching.
+    });
+  }
+}
+
+function showInstallButtons() {
+  installButtons.forEach((button) => {
+    button.hidden = false;
+  });
+}
+
+function hideInstallButtons() {
+  installButtons.forEach((button) => {
+    button.hidden = true;
+  });
+}
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  deferredInstallPrompt = event;
+  showInstallButtons();
+});
+
+window.addEventListener("appinstalled", () => {
+  deferredInstallPrompt = null;
+  hideInstallButtons();
+});
+
 eraButtons.forEach((button) => {
   button.addEventListener("click", () => setEra(button.dataset.era));
 });
@@ -442,7 +475,21 @@ musicButtons.forEach((button) => {
   button.addEventListener("click", toggleMusic);
 });
 
+installButtons.forEach((button) => {
+  button.addEventListener("click", async () => {
+    if (!deferredInstallPrompt) {
+      return;
+    }
+
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt = null;
+    hideInstallButtons();
+  });
+});
+
 renderQuestion();
 updateCard();
 updateMatch();
 restoreMusicState();
+registerServiceWorker();
