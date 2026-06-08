@@ -1,4 +1,4 @@
-const CACHE_NAME = "ronaldo-pulse-v1";
+const CACHE_NAME = "ronaldo-pulse-v2";
 const CORE_ASSETS = [
   "./",
   "./index.html",
